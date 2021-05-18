@@ -1,0 +1,10 @@
+creditRepoOwner: false
+labels:
+  include:
+    - enhancement
+    - bug
+  configs:
+    - name: enhancement
+      displayName: Enhancements
+    - name: bug
+      displayName: 'Bug fixes'

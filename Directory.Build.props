@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)StrongName.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <ContinuousIntegrationBuild>false</ContinuousIntegrationBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarnOnPackingNonPackableProject>false</WarnOnPackingNonPackableProject>
+  </PropertyGroup>
+</Project>
