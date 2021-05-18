@@ -1,3 +1,3 @@
 # Hosting.Extensions.Plugins
 
-Adds plugin support to Microsoft.Extensions.Hosting.
+Adds plugin support for Microsoft.Extensions.Hosting.

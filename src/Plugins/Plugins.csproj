@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net5.0</TargetFrameworks>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Hosting.Extensions.Plugins</RootNamespace>
+    <AssemblyName>Hosting.Extensions.Plugins</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Hosting.Extensions.Plugins</PackageId>
+    <Description>Adds plugin support to Microsoft.Extensions.Hosting</Description>
+    <PackageTags>hosting;plugins</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.NETCore.Plugins" Version="1.4.0" PrivateAssets="compile" />
+    <PackageReference Include="NuGet.Versioning" Version="6.1.0" />
+    <PackageReference Include="System.Linq.Async" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="[5.0.0, 6.0.0)" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="[6.0.0, 7.0.0)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

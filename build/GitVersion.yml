@@ -1,0 +1,25 @@
+mode: Mainline
+increment: None
+branches:
+  main:
+    tag: ''
+    increment: None
+  other:
+    regex: ^(?!main)
+    tag: beta
+    increment: None
+    source-branches: [ main ]
+  pull-request:
+    regex: override_default_pull_request
+  develop:
+    regex: override_default_develop
+  release:
+    regex: override_default_release
+  feature:
+    regex: override_default_feature
+  hotfix:
+    regex: override_default_hotfix
+  support:
+    regex: override_default_support
+ignore:
+  sha: []

@@ -1,0 +1,62 @@
+parameters:
+  - name: target
+    displayName: Cake target
+    type: string
+    default: CI
+    values:
+      - CI
+      - Build
+      - Test
+      - Pack
+      - Push
+  - name: configuration
+    displayName: Build configuration
+    type: string
+    default: Release
+  - name: verbosity
+    displayName: Cake verbosity
+    type: string
+    default: Normal
+    values:
+      - Quiet
+      - Minimal
+      - Normal
+      - Verbose
+      - Diagnostic
+
+variables:
+  - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main') }}:
+    - group: Stable
+  - ${{ if ne(variables['Build.SourceBranch'], 'refs/heads/main') }}:
+    - group: Non-Stable
+
+  - name: buildCounter
+    value: $[counter('X', 1)]
+
+
+pool:
+  vmImage: 'windows-2022'
+
+steps:
+- pwsh: |
+    dotnet tool restore
+  displayName: 'Restore local dotnet tools'
+  env:
+    NUGET_PLUGIN_HANDSHAKE_TIMEOUT_IN_SECONDS: 60
+    NUGET_PLUGIN_REQUEST_TIMEOUT_IN_SECONDS: 60
+- pwsh: >
+    dotnet cake build/build.cake
+    --verbosity ${{ parameters.verbosity }}
+    --target=${{ parameters.target }}
+    --configuration=${{ parameters.configuration }}
+    --build-number=$(buildCounter)
+    --nuget-feed=$(NuGetFeed)
+    --nuget-user-name=$(NuGetUserName)
+    --nuget-api-key=$env:NUGET_API_KEY
+    --github-pat $env:GITHUB_PAT
+  displayName: 'Build'
+  env:
+    NUGET_PLUGIN_HANDSHAKE_TIMEOUT_IN_SECONDS: 60
+    NUGET_PLUGIN_REQUEST_TIMEOUT_IN_SECONDS: 60
+    NUGET_API_KEY: $(NuGetApiKey)
+    GITHUB_PAT: $(GitHubPat)

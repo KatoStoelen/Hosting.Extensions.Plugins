@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A4C5132-ED5D-4239-B3B2-31E498434C62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins", "src\Plugins\Plugins.csproj", "{3D8A2790-6C03-4FBD-B521-9C9A8416DD26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetRegistry", "src\NuGetRegistry\NuGetRegistry.csproj", "{3433EC1D-CEAF-4E00-9804-62AAEEE02FAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D8A2790-6C03-4FBD-B521-9C9A8416DD26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D8A2790-6C03-4FBD-B521-9C9A8416DD26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D8A2790-6C03-4FBD-B521-9C9A8416DD26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D8A2790-6C03-4FBD-B521-9C9A8416DD26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3433EC1D-CEAF-4E00-9804-62AAEEE02FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3433EC1D-CEAF-4E00-9804-62AAEEE02FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3433EC1D-CEAF-4E00-9804-62AAEEE02FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3433EC1D-CEAF-4E00-9804-62AAEEE02FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3D8A2790-6C03-4FBD-B521-9C9A8416DD26} = {6A4C5132-ED5D-4239-B3B2-31E498434C62}
+		{3433EC1D-CEAF-4E00-9804-62AAEEE02FAB} = {6A4C5132-ED5D-4239-B3B2-31E498434C62}
+	EndGlobalSection
+EndGlobal
